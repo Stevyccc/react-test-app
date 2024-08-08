@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState} from "react";
-import { UsePrevious as usePrevious } from "./UsePrevious";
+import usePrevious from "./UsePrevious";
 
 export default function Todo(props) {
     const [isEditing, setEditing] = useState(false);
@@ -82,7 +82,7 @@ export default function Todo(props) {
     );
 
     useEffect(() => {
-        if (!wasEditingEditing && isEditing) {
+        if (!wasEditing && isEditing) {
             editFieldRef.current.focus();
             } 
         else if (wasEditing && !isEditing) {
